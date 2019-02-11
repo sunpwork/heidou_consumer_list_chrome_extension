@@ -1,0 +1,31 @@
+{
+    "name": "黑豆校园消费榜单插件",
+    "version": "1.0.0",
+    "description": "黑豆校园消费榜单实时更新",
+    "background": {
+        "scripts": [
+            "js/background.js",
+            "js/jquery-3.3.1.min.js"
+        ]
+    },
+    "permissions": [
+        "tabs",
+        "http://*/*",
+        "https://*/*",
+        "declarativeContent",
+        "storage"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.universityto.me/web/index.php?c=site&a=entry&ctrl=member&ac=list&op=list&do=web&m=we7_wmall&page=1&keyword=&sort=success_price&sort_val=1"
+            ],
+            "js": [
+                "js/jquery-3.3.1.min.js",
+                "js/userList.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "manifest_version": 2
+}
