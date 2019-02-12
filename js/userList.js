@@ -15,4 +15,7 @@ for (var i = 0; i < user_trs.length; i++) {
 chrome.runtime.sendMessage({ 'top_users': top_users }, function (response) {
 
 });
-console.log(top_users);
+
+setInterval(function(){
+    window.location.reload();
+},60000);
